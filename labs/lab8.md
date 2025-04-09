@@ -25,7 +25,7 @@ Pour créer et gérer des ressources Azure, nous avons vu la dernière fois que 
 
 ## 2. Déploiement de l'application vue-2048 depuis un pipeline de CD
 
-- Repartir du contenu du fichier lab8.yml (dans le dossier pipelines) pour initialiser le pipeline qui se chargera du déploiement sur les environnements
+- Repartir du contenu du fichier lab8/0-init.yml (dans le dossier pipelines) pour initialiser le pipeline qui se chargera du déploiement sur les environnements
 - Créer un stage pour la QA et un stage pour la production
 - Implémenter les jobs qui vont déployer le projet en QA et en production en utilisant la SWA CLI
 - Vérifier que le pipeline fonctionne bien et déploie l'application sur les 2 Azure Static Web App (QA et Production)
