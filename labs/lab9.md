@@ -23,7 +23,7 @@
 git remote add github https://github.com/{username}/vue2048.git
 git push github main
 ```
-3. Renseigner le wiki avec l'url de votre répertoire github  : https://moodle.bordeaux-inp.fr/mod/wiki/view.php?id=124287
+3. Renseigner le wiki avec l'url de votre répertoire github sur le fichier de répartition des groupes.
 
 ## Déroulé du TP
 

@@ -20,7 +20,7 @@ Afin de pouvoir faire les labs, chaque groupe créera son projet sur GitLab à p
     2. Le namespace "bordeauxinp/ei8it213" doit être choisi dans l'URL du projet
     3. Les noms des membres du groupe de TP doivent être indiqués dans la description du projet
     4. Valider
-2. Choisir un numéro pour le groupe et aller remplir dans le [tableur d'organisation des groupes](https://docs.google.com/spreadsheets/d/1suMYWPB5DamO1rEdpY8SVMZQR-Q-Zm65HJn_dk-ypEE/edit?usp=sharing) les informations sur les membres du groupe et l'URL du répertoire.
+2. Choisir un numéro pour le groupe et aller remplir dans le tableur d'organisation des groupes les informations sur les membres du groupe et l'URL du répertoire.
 Cela permettra à l'enseignant de mettre l'autre membre du projet en Owner du projet sur GitLab.
 
 ## Installation des logiciels nécessaires
