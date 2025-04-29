@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - lab9
+      - main
     paths-ignore:
       - 'docs/'
   pull_request:
@@ -18,6 +19,15 @@ on:
         required: true
         default: true
         type: boolean
+      environment:
+        description: 'Environnement à déployer (qa, prod, both)'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - qa
+          - prod
+          - both
 
 jobs:
   build:
@@ -80,6 +90,7 @@ jobs:
           name: build-artifact
 
       - name: Deploy to QA
+        if: github.event.inputs.environment == 'qa' || github.event.inputs.environment == 'both'
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_TOKEN_QA }}
@@ -89,6 +100,7 @@ jobs:
           output_location: "dist"
 
       - name: Deploy to PROD
+        if: github.event.inputs.environment == 'prod' || github.event.inputs.environment == 'both'
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_TOKEN_PROD }}
