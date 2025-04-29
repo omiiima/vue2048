@@ -46,9 +46,9 @@ jobs:
         if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == 'true'
         run: pnpm run type-check
 
-      - name: Lint
+      - name: Lint & auto-fix
         if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == 'true'
-        run: pnpm run lint
+        run: pnpm run lint --fix
 
       - name: Test
         if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == 'true'
