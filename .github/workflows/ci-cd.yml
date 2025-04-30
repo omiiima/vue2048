@@ -13,6 +13,21 @@ on:
   schedule:
     - cron: '0 8 * * 1'
   workflow_dispatch:
+    inputs:
+      run_tests:
+        description: 'Inclure les tests et l’analyse statique ?'
+        required: true
+        default: true
+        type: boolean
+      environment:
+        description: 'Environnement à déployer (qa, prod, both)'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - qa
+          - prod
+          - both
 
 jobs:
   build:
