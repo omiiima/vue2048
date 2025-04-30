@@ -53,15 +53,15 @@ jobs:
         run: pnpm install
 
       - name: Type check
-        if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == 'true'
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == true
         run: pnpm run type-check
 
       - name: Lint & auto-fix
-        if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == 'true'
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == true
         run: pnpm run lint --fix
 
       - name: Test
-        if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == 'true'
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.run_tests == true
         run: pnpm run test
 
       - name: Build
@@ -75,6 +75,7 @@ jobs:
           retention-days: ${{ github.ref == 'refs/heads/main' && 7 || 1 }}
 
   deploy:
+
     name: Deploy to QA and PROD
     needs: build
     if: github.event_name == 'workflow_dispatch'
